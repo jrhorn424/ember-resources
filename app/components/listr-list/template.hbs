@@ -1,6 +1,6 @@
 <h3 class="list-header" {{action 'toggleListDetail'}}>{{list.title}}</h3>
 <ul>
   {{#each list.items as |item|}}
-    {{listr-list/item item=item}}
+    {{listr-list/item item=item toggleDone='toggleItemDone'}}
   {{/each}}
 </ul>
