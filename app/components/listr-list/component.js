@@ -5,11 +5,11 @@ export default Ember.Component.extend({
 
   actions: {
     toggleItemDone (item) {
-      return this.sendAction('toggleItemDone', item);
+      this.sendAction('toggleItemDone', item);
     },
 
     deleteItem (item) {
-      return this.sendAction('deleteItem', item);
+      this.sendAction('deleteItem', item);
     },
   },
 });
