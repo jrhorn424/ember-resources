@@ -6,6 +6,10 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    edit (list) {
+      this.transitionTo('list.edit', list);
+    },
+
     toggleItemDone (item) {
       item.toggleProperty('done');
       item.save();

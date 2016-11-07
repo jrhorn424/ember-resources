@@ -25,5 +25,9 @@ export default Ember.Component.extend({
 
       this.set('form.text', null);
     },
+
+    edit () {
+      this.sendAction('edit', this.get('list'));
+    },
   },
 });
