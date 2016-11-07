@@ -1,9 +1,14 @@
 import ApplicationSerializer from 'ga-wdi-boston.ember-resources/application/serializer';
 
 export default ApplicationSerializer.extend({
-  // serialize () {
-  //   // switch back from text to content
-  // },
+  serialize () {
+    let serialized = this._super(...arguments);
+
+    serialized.content = serialized.text;
+    delete serialized.text;
+
+    return serialized;
+  },
 
   normalize (model, response) {
     response.text = response.content;

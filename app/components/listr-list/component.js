@@ -3,6 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: ['listr'],
 
+  form: {
+    text: null,
+    done: false,
+  },
+
   actions: {
     toggleItemDone (item) {
       this.sendAction('toggleItemDone', item);
@@ -10,6 +15,15 @@ export default Ember.Component.extend({
 
     deleteItem (item) {
       this.sendAction('deleteItem', item);
+    },
+
+    createItem () {
+      let newItem = this.get('form');
+      newItem.list = this.get('list');
+
+      this.sendAction('createItem', newItem);
+
+      this.set('form.text', null);
     },
   },
 });
